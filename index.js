@@ -1,13 +1,35 @@
 let imageArr = ["flower","fruit","rainbow","sun"];
 
-$(".box").click(function(){
-  alert(randImage);
-});
+let firstClick = [];
+let secondClick = [];
+
+let startGame = false;
+$("img").css("visibility","hidden");
 
 $("#btn").click(function(){
-  $("#btn").text("0");
-  shuffle();
+
+    if(!startGame){
+      $("#btn").text("0");
+      shuffle();
+      $("img").css("visibility","visible");
+      startGame = true;
+      setTimeout(function(){
+        $("img").css("visibility","hidden");
+      },3000);
+
+    }
 });
+
+var count = 0;
+$(".box").click(function(){
+  count++;
+  if(count <= 2){
+    $("img", this).css("visibility", "visible");
+    $("img", this).
+  }
+});
+
+
 
 function shuffle(){
   for(let i = 1; i <= 8; i++){

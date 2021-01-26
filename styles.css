@@ -9,6 +9,12 @@ body {
   align-items: center;
 }
 
+.box{
+  background-image: url("images/card.svg");
+  background-size: 100% 100%;
+}
+
+
 
 .score{
   text-align: center;
