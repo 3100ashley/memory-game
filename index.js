@@ -1,7 +1,6 @@
 let imageArr = ["flower","fruit","rainbow","sun"];
 
 let firstClick = [];
-let secondClick = [];
 
 let startGame = false;
 $("img").css("visibility","hidden");
@@ -16,19 +15,26 @@ $("#btn").click(function(){
       setTimeout(function(){
         $("img").css("visibility","hidden");
       },3000);
-
     }
 });
 
 var count = 0;
 $(".box").click(function(){
+  var imgSrc = $("img", this).attr("src")
   count++;
   if(count <= 2){
     $("img", this).css("visibility", "visible");
-    $("img", this).
+    firstClick.push(imgSrc);
   }
+  solutionCheck(firstClick);
 });
 
+function solutionCheck(array){
+  let length = array.length;
+  if(array[length - 1] === array[length - 2]){
+    console.log("correct");
+  }
+}
 
 
 function shuffle(){
