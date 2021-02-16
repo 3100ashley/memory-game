@@ -1,4 +1,4 @@
-//Issue: Click many boxes.
+//Issues: none
 
 let boxClass = [];
 let imgSources = [];
@@ -54,14 +54,13 @@ function solutionCheck(array, boxObject){
     console.log("correct");
     count = 0;
     score++;
-    // console.log("score: " +score);
-    // console.log("count: " +count);
     $("#btn").text(score);
     if(score == 4){
 
-      startGame = false;
       $("#btn").text("Winner!! click me to play again");
-      $("#btn").click(document.location.reload(true));
+      $("#btn").click(function(){
+        document.location.reload(true)
+      });
 
     }
   }
