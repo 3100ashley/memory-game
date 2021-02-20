@@ -58,9 +58,9 @@ $("#btn").click(function(){
       score++;
       console.log("score: " + score);
       $("#btn").text(score);
-      if(score >= 4){
+      if(score == 4){
         //start=true;
-        clickAble();
+        $(".container").css("pointer-events", "none");
         $("#btn").text("Winner!! click me to play again");
         $("#btn").click(function(){
           document.location.reload(true)
@@ -81,9 +81,6 @@ $("#btn").click(function(){
   }
 
 
-function clickAble(){
-  ableToClick = false;
-}
 
 function shuffle(){
   for(let i = 1; i <= 8; i++){
